@@ -1,13 +1,11 @@
 """Unit tests for the analysis functions."""
 import pytest
 from src.analysis import simulate_match
-from src.data_loader import load_mu_probabilities
 
 
 @pytest.fixture
 def mock_probabilities_df(monkeypatch):
     import pandas as pd
-    # Create a mock DataFrame
     test_data = {
         'player_id1': [101, 101, 102],
         'player_id2': [102, 103, 103],
@@ -19,7 +17,6 @@ def mock_probabilities_df(monkeypatch):
         ]
     }
     mock_df = pd.DataFrame(test_data)
-    # Use monkeypatch to replace the DataFrame in your analysis module
     monkeypatch.setattr('src.analysis.probabilities_df', mock_df)
 
 def test_simulate_match_bo3(mock_probabilities_df):
