@@ -1,5 +1,4 @@
 """Core functionalities to calculate qualifications."""
-import pandas as pd
 from src.data_loader import load_players_entries, load_mu_probabilities, load_players_standings
 
 players_df = load_players_entries('data/players.json')
@@ -26,13 +25,9 @@ def update_standings(player1_id, player2_id, winning_score):
     else:
         winner_id = player2_id
     
-    # Assuming a simplistic points update: +3 points for a win
     standings_df.loc[standings_df['player_id'] == winner_id, 'ept_points'] += 3
 
-
-# QUALIFICATION SCENARIOS
 def calculate_qualification_scenarios():
-    # Assuming top 2 players from each region qualify
     qualified_players = standings_df.groupby('region').apply(
         lambda x: x.nlargest(2, 'ept_points')['name'].tolist()
     )

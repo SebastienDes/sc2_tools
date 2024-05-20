@@ -1,3 +1,4 @@
 pandas
 pdoc
 pytest
+ruff
