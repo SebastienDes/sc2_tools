@@ -1,0 +1,20 @@
+[
+    {
+        "player_id": 101,
+        "name": "Maru",
+        "team": "Team NV",
+        "status": "Qualified from: Winner of ESL SC2 Masters 2023 Summer"
+    },
+    {
+        "player_id": 102,
+        "name": "Serral",
+        "team": "ENCE",
+        "status": "Qualified from: Top 4 of IEM Katowice 2024"
+    },
+    {
+        "player_id": 103,
+        "name": "Reynor",
+        "team": "Clash",
+        "status": "Not Qualified"
+    }
+]
